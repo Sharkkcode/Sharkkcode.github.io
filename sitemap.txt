@@ -1,0 +1,14 @@
+https://sharkkcode.github.io/2022/08/16/SHELL-CTF-2022/
+https://sharkkcode.github.io/2022/07/21/CTF-Introduction/
+https://sharkkcode.github.io/2022/07/23/pwnable-tw-start/
+https://sharkkcode.github.io/2022/07/22/Data-Mining-Project-110-2/
+https://sharkkcode.github.io/2022/07/21/PIE-affected-by-ASLR/
+https://sharkkcode.github.io/tags/index.html
+https://sharkkcode.github.io/categories/index.html
+https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/
+https://sharkkcode.github.io/
+https://sharkkcode.github.io/tags/CTF/
+https://sharkkcode.github.io/tags/SHELLCTF/
+https://sharkkcode.github.io/tags/PWN/
+https://sharkkcode.github.io/categories/Information-Security/
+https://sharkkcode.github.io/categories/Data-Science/
