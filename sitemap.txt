@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2022/09/16/Artificial-Neural-Network/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
 https://sharkkcode.github.io/2022/07/23/pwnable-tw-start/
 https://sharkkcode.github.io/2022/08/16/SHELL-CTF-2022/
@@ -8,10 +9,12 @@ https://sharkkcode.github.io/tags/index.html
 https://sharkkcode.github.io/categories/index.html
 https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/
 https://sharkkcode.github.io/
+https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/CTF/
 https://sharkkcode.github.io/tags/integrate/
 https://sharkkcode.github.io/tags/SHELLCTF/
 https://sharkkcode.github.io/tags/PWN/
+https://sharkkcode.github.io/categories/Artificial-Intelligence/
 https://sharkkcode.github.io/categories/Information-Security/
 https://sharkkcode.github.io/categories/Data-Science/
 https://sharkkcode.github.io/categories/portfolio/
