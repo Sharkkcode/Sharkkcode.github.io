@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sharkkcode.github.io/2022/09/27/Binary-Exploitation-1/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/2022/09/16/Artificial-Neural-Network/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/2022/09/27/Big-Data-Visualization-with-Apache-Spark-and-D3JS/</loc>
     
     <lastmod>2022-09-27</lastmod>
@@ -21,15 +39,6 @@
   
   <url>
     <loc>https://sharkkcode.github.io/2022/09/14/Portfolio/</loc>
-    
-    <lastmod>2022-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/2022/09/16/Artificial-Neural-Network/</loc>
     
     <lastmod>2022-09-16</lastmod>
     
@@ -117,6 +126,20 @@
   </url>
   
   <url>
+    <loc>https://sharkkcode.github.io/tags/TA/</loc>
+    <lastmod>2022-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/PWN/</loc>
+    <lastmod>2022-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/tags/CTF/</loc>
     <lastmod>2022-09-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -132,13 +155,6 @@
   
   <url>
     <loc>https://sharkkcode.github.io/tags/SHELLCTF/</loc>
-    <lastmod>2022-09-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/PWN/</loc>
     <lastmod>2022-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

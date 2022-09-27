@@ -1,7 +1,8 @@
+https://sharkkcode.github.io/2022/09/27/Binary-Exploitation-1/
+https://sharkkcode.github.io/2022/09/16/Artificial-Neural-Network/
 https://sharkkcode.github.io/2022/09/27/Big-Data-Visualization-with-Apache-Spark-and-D3JS/
 https://sharkkcode.github.io/2022/07/23/pwnable-tw-start/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
-https://sharkkcode.github.io/2022/09/16/Artificial-Neural-Network/
 https://sharkkcode.github.io/2022/08/16/SHELL-CTF-2022/
 https://sharkkcode.github.io/2022/07/21/CTF-Introduction/
 https://sharkkcode.github.io/2022/07/22/Data-Mining-Project-110-2/
@@ -11,10 +12,11 @@ https://sharkkcode.github.io/categories/index.html
 https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/
 https://sharkkcode.github.io/
 https://sharkkcode.github.io/tags/ANN/
+https://sharkkcode.github.io/tags/TA/
+https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/tags/CTF/
 https://sharkkcode.github.io/tags/integrate/
 https://sharkkcode.github.io/tags/SHELLCTF/
-https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/categories/Artificial-Intelligence/
 https://sharkkcode.github.io/categories/Information-Security/
 https://sharkkcode.github.io/categories/Data-Science/
