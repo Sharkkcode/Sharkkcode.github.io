@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sharkkcode.github.io/2022/09/14/Portfolio/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/2022/09/27/Binary-Exploitation-1/</loc>
     
     <lastmod>2022-09-27</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://sharkkcode.github.io/2022/07/23/pwnable-tw-start/</loc>
     
     <lastmod>2022-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/2022/09/14/Portfolio/</loc>
-    
-    <lastmod>2022-09-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
