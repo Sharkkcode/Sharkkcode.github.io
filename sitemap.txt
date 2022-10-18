@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2022/10/18/Crypto-Practice-1/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
 https://sharkkcode.github.io/2022/10/07/Binary-Exploitation-2/
 https://sharkkcode.github.io/2022/09/27/Binary-Exploitation-1/
@@ -16,6 +17,7 @@ https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/TA/
 https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/tags/CTF/
+https://sharkkcode.github.io/tags/Crypto/
 https://sharkkcode.github.io/tags/integrate/
 https://sharkkcode.github.io/tags/SHELLCTF/
 https://sharkkcode.github.io/categories/Artificial-Intelligence/
