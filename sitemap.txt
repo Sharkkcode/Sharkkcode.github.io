@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2022/12/03/python-wrangling/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
 https://sharkkcode.github.io/2022/11/17/Symbolic-Execution/
 https://sharkkcode.github.io/2022/11/17/SROP/
@@ -28,3 +29,4 @@ https://sharkkcode.github.io/categories/Artificial-Intelligence/
 https://sharkkcode.github.io/categories/Information-Security/
 https://sharkkcode.github.io/categories/Data-Science/
 https://sharkkcode.github.io/categories/portfolio/
+https://sharkkcode.github.io/categories/picoctf/
