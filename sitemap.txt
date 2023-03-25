@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2023/03/25/A1-Perceptron/
 https://sharkkcode.github.io/2023/03/04/Jensen-Inequality/
 https://sharkkcode.github.io/2023/03/03/Perfect-Secrecy/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
@@ -29,10 +30,12 @@ https://sharkkcode.github.io/tags/index.html
 https://sharkkcode.github.io/categories/index.html
 https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/
 https://sharkkcode.github.io/
+https://sharkkcode.github.io/tags/ML/
+https://sharkkcode.github.io/tags/homework/
 https://sharkkcode.github.io/tags/CTF/
-https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/TA/
 https://sharkkcode.github.io/tags/Crypto/
+https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/tags/note/
 https://sharkkcode.github.io/tags/integrate/
