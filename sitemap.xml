@@ -290,6 +290,13 @@
 
   
   <url>
+    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
+    <lastmod>2023-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/tags/ML/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -304,7 +311,7 @@
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
+    <loc>https://sharkkcode.github.io/tags/ANN/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -319,13 +326,6 @@
   
   <url>
     <loc>https://sharkkcode.github.io/tags/Crypto/</loc>
-    <lastmod>2023-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/ANN/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
