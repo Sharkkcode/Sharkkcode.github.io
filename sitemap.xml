@@ -290,7 +290,28 @@
 
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
+    <loc>https://sharkkcode.github.io/tags/TA/</loc>
+    <lastmod>2023-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/Crypto/</loc>
+    <lastmod>2023-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/ANN/</loc>
+    <lastmod>2023-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/PWN/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -311,28 +332,7 @@
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/ANN/</loc>
-    <lastmod>2023-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/TA/</loc>
-    <lastmod>2023-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/Crypto/</loc>
-    <lastmod>2023-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/PWN/</loc>
+    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -346,14 +346,14 @@
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/SHELLCTF/</loc>
+    <loc>https://sharkkcode.github.io/tags/integrate/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/integrate/</loc>
+    <loc>https://sharkkcode.github.io/tags/SHELLCTF/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -369,14 +369,14 @@
 
   
   <url>
-    <loc>https://sharkkcode.github.io/categories/Information-Security/</loc>
+    <loc>https://sharkkcode.github.io/categories/Artificial-Intelligence/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/categories/Artificial-Intelligence/</loc>
+    <loc>https://sharkkcode.github.io/categories/Information-Security/</loc>
     <lastmod>2023-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
