@@ -360,20 +360,6 @@
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/ML/</loc>
-    <lastmod>2024-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/homework/</loc>
-    <lastmod>2024-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sharkkcode.github.io/tags/ANN/</loc>
     <lastmod>2024-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -388,6 +374,27 @@
   </url>
   
   <url>
+    <loc>https://sharkkcode.github.io/tags/Crypto/</loc>
+    <lastmod>2024-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/ML/</loc>
+    <lastmod>2024-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/homework/</loc>
+    <lastmod>2024-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/tags/PWN/</loc>
     <lastmod>2024-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,7 +402,7 @@
   </url>
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/Crypto/</loc>
+    <loc>https://sharkkcode.github.io/tags/OSINT/</loc>
     <lastmod>2024-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -424,13 +431,6 @@
   
   <url>
     <loc>https://sharkkcode.github.io/tags/Program-Security/</loc>
-    <lastmod>2024-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/OSINT/</loc>
     <lastmod>2024-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
