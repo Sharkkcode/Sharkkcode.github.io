@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2024/06/25/OSINT-Exercise-001-walkthrough/
 https://sharkkcode.github.io/2024/03/25/basic-mod-1/
 https://sharkkcode.github.io/2022/09/14/Portfolio/
 https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/
@@ -45,8 +46,9 @@ https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/tags/Crypto/
 https://sharkkcode.github.io/tags/note/
 https://sharkkcode.github.io/tags/integrate/
-https://sharkkcode.github.io/tags/Program-Security/
 https://sharkkcode.github.io/tags/SHELLCTF/
+https://sharkkcode.github.io/tags/Program-Security/
+https://sharkkcode.github.io/tags/OSINT/
 https://sharkkcode.github.io/categories/Information-Security/
 https://sharkkcode.github.io/categories/Artificial-Intelligence/
 https://sharkkcode.github.io/categories/Data-Science/
