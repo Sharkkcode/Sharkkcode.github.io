@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>PIE affected by ASLR | Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</title><meta name="author" content="Sharkkcode"><meta name="copyright" content="Sharkkcode"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="PIE affected by ASLR PIE (Position Independent Executable)  The instructions will be represented in relative address instead of absolute address.  ASLR (Address Space Layout Randomization)  Use random">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PIE affected by ASLR">
+<meta property="og:url" content="https://sharkkcode.github.io/2022/07/21/PIE-affected-by-ASLR/index.html">
+<meta property="og:site_name" content="Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD">
+<meta property="og:description" content="PIE affected by ASLR PIE (Position Independent Executable)  The instructions will be represented in relative address instead of absolute address.  ASLR (Address Space Layout Randomization)  Use random">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sharkkcode.github.io/img/wall.jpg">
+<meta property="article:published_time" content="2022-07-21T08:00:13.000Z">
+<meta property="article:modified_time" content="2022-07-22T16:30:00.000Z">
+<meta property="article:author" content="Sharkkcode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sharkkcode.github.io/img/wall.jpg"><link rel="shortcut icon" href="/img/fishingcat.jpg"><link rel="canonical" href="https://sharkkcode.github.io/2022/07/21/PIE-affected-by-ASLR/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PIE affected by ASLR',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-23 00:30:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2445008510937449" crossorigin="anonymous"></script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/fishingcat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/wall.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PIE affected by ASLR</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-07-21T08:00:13.000Z" title="Created 2022-07-21 16:00:13">2022-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-22T16:30:00.000Z" title="Updated 2022-07-23 00:30:00">2022-07-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Information-Security/">Information Security</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="PIE affected by ASLR"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="pie-affected-by-aslr">PIE affected by ASLR</h1>
+<h2 id="pie-position-independent-executable">PIE (Position Independent Executable)</h2>
+<ul>
+<li>The instructions will be represented in <strong>relative address</strong> instead of <strong>absolute address</strong>.</li>
+</ul>
+<h2 id="aslr-address-space-layout-randomization">ASLR (Address Space Layout Randomization)</h2>
+<ul>
+<li>Use <strong>random base address</strong> when the program is loaded to stack, heap, etc.</li>
+</ul>
+<h2 id="purpose-of-my-experiment">Purpose of my experiment</h2>
+<ul>
+<li>Understanding how ASLR affect the address.</li>
+</ul>
+<h2 id="design-experiment">Design experiment</h2>
+<ul>
+<li><p>Run a simple program (unstripped) and find where the <strong>"main function"</strong> in the program is. Does the address of the <strong>"main function"</strong> differs everytime I execute?</p></li>
+<li><p>Check the main function's offset. Does it differs everytime I execute?</p></li>
+<li><p>I also create a stripped file to observe it's main function and main function's offset.</p></li>
+</ul>
+<h2 id="create-test-files-test-test2">Create test files (test, test2)</h2>
+<ul>
+<li><p><code>test.c</code></p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Compile to 2 binary files</p>
+<ul>
+<li><p>test (PIE, not stripped)</p>
+<ul>
+<li><p>Compile command</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.c -o test</span><br></pre></td></tr></table></figure></p></li>
+</ul></li>
+<li><p>test2 (PIE, stripped)</p>
+<ul>
+<li><p>Compile command</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.c -s -o test2</span><br></pre></td></tr></table></figure></p></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="testing-test">Testing <code>test</code></h2>
+<ul>
+<li><p>Run <code>test</code> with GDB and set a breakpoint at main.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh20.png" /></p></li>
+<li><p>Run it and it will stop at main. The main's address is 0x555555555149.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh22.png" /></p></li>
+<li><p>Base address.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh23.png" /></p></li>
+<li><p>Calculation of Main's address &amp; Main's Offset &amp; Base address.</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Main&#x27;s address: MA</span><br><span class="line">Base address: BA</span><br><span class="line">Main&#x27;s Offset: MO</span><br><span class="line"></span><br><span class="line">MA = BA + MO</span><br><span class="line">   = 0x555555554000 + 0x1149</span><br><span class="line">   = 0x555555555149</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>After testing <code>test</code> a lot of times I found that main's address is always the same. Maybe GDB "disabled" ASLR?</strong></p></li>
+<li><p>Due to the issue above, I created <code>test3</code>. The purpose of this program is to wait for user input. Then we can <strong>attach the process of this program to GDB</strong>. After doing this we might see the affect of ASLR.</p></li>
+<li><p><code>test3.c</code></p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter a number:\n&quot;</span>);</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello %d!\n&quot;</span>, num);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>test3 (PIE, not stripped)</p>
+<ul>
+<li><p>Compile command</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test3.c -o test3</span><br></pre></td></tr></table></figure></p></li>
+</ul></li>
+</ul>
+<h2 id="testing-test3">Testing <code>test3</code></h2>
+<ul>
+<li><p>In this test, I will first run test3 with GDB then run it independently and compare the 2 results.</p></li>
+<li><p><strong>Run <code>test3</code> with GDB and set a breakpoint at main.</strong></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh30.png" /></p>
+<ul>
+<li>So far, I know the main's offset is 0x11a9.</li>
+</ul></li>
+<li><p>Check the base address.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh31.png" /></p>
+<ul>
+<li>Base address is 0x555555554000 this time.</li>
+</ul></li>
+<li><p><strong>Run <code>test3</code></strong></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./test3</span><br></pre></td></tr></table></figure></p></li>
+<li><p>This program will wait for an user input.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh28.png" /></p></li>
+<li><p>Find the process id of the new program. ==&gt; 110703</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh29.png" /></p></li>
+<li><p>Attach the process to gdb and check the base address (0x55ee45f8f000 for this time). By checking the base address value several times, I found that the base address may be is different every time now! Which means ASLR is working now!</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh32.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh33.png" /></p></li>
+<li><p>Calculate main's offset. The result shows that main's offset is 0x11a9 everytime I test.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh34.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh35.png" /></p></li>
+<li><p><strong>By doing the small tests above, I know that:</strong></p>
+<ol type="1">
+<li><p>Due to ASLR, base address may change everytime I execute.</p></li>
+<li><p>The main's offset in the same program will always be the same.</p></li>
+</ol></li>
+</ul>
+<h2 id="testing-test2">Testing <code>test2</code></h2>
+<ul>
+<li><p>Reminder: <code>test2</code> is a stripped file.</p></li>
+<li><p>Run <code>test2</code> with GDB.</p></li>
+<li><p>I can't use <code>b *main</code> and <code>p *main</code> to find main's address.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh37.png" /></p></li>
+<li><p>Enter <code>info files</code> to find some clues like "Entry point".</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh38.png" /></p></li>
+<li><p>Print Entry point's neighboring instructions. It seems like it is calling <strong>"libc start main"</strong> at line 0x1088. And if my assumption is true, line 0x1081 might be <strong>"loading main's address"</strong> which is <strong>(0x1088 + 0xc1 = 0x1149)</strong>.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh40.png" /></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notice that the rip value is the value of next line! (because of pipeline?) So it is 0x1088 not 0x1081!</span><br></pre></td></tr></table></figure></p></li>
+<li><p>0x1149 is as same as the main's offset when I run <code>test</code>. Now I know the main's offset. I can use <code>info proc mappings</code> to find base address. By knowing main's offset and base address, I can calculate main's address!</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh42.png" /></p></li>
+<li><p>Calculate main's address</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Main&#x27;s address: MA</span><br><span class="line">Base address: BA</span><br><span class="line">Main&#x27;s Offset: MO</span><br><span class="line"></span><br><span class="line">MA = BA + MO</span><br><span class="line">   = 0x555555554000 + 0x1149</span><br><span class="line">   = 0x555555555149</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Set break point and run. Then, main in test2 appears.</p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/pa/hh45.png" /></p></li>
+</ul>
+<h2 id="what-i-observed-and-learned">What I Observed And Learned?</h2>
+<ul>
+<li><p>Due to ASLR, base address may change everytime I execute.</p></li>
+<li><p>The main's offset in the same program will always be the same.</p></li>
+<li><p>I learned a way of finding the main's address when the program is stripped.</p></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io">Sharkkcode</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io/2022/07/21/PIE-affected-by-ASLR/">https://sharkkcode.github.io/2022/07/21/PIE-affected-by-ASLR/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/22/Data-Mining-Project-110-2/"><img class="prev-cover" src="/img/wall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Data Mining Project 110_2</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/21/CTF-Introduction/"><img class="next-cover" src="/img/wall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">CTF Introduction</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/fishingcat.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sharkkcode</div><div class="author-info__description">Keep Learning</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sharkkcode"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my BLOG ~~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pie-affected-by-aslr"><span class="toc-number">1.</span> <span class="toc-text">PIE affected by ASLR</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pie-position-independent-executable"><span class="toc-number">1.1.</span> <span class="toc-text">PIE (Position Independent Executable)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aslr-address-space-layout-randomization"><span class="toc-number">1.2.</span> <span class="toc-text">ASLR (Address Space Layout Randomization)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#purpose-of-my-experiment"><span class="toc-number">1.3.</span> <span class="toc-text">Purpose of my experiment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#design-experiment"><span class="toc-number">1.4.</span> <span class="toc-text">Design experiment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#create-test-files-test-test2"><span class="toc-number">1.5.</span> <span class="toc-text">Create test files (test, test2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#testing-test"><span class="toc-number">1.6.</span> <span class="toc-text">Testing test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#testing-test3"><span class="toc-number">1.7.</span> <span class="toc-text">Testing test3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#testing-test2"><span class="toc-number">1.8.</span> <span class="toc-text">Testing test2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-i-observed-and-learned"><span class="toc-number">1.9.</span> <span class="toc-text">What I Observed And Learned?</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CVE-2024-6239"/></a><div class="content"><a class="title" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239">CVE-2024-6239</a><time datetime="2024-08-30T16:07:12.000Z" title="Created 2024-08-31 00:07:12">2024-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/" title="Detailed Guide to Getting Started with Windows ETW"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Detailed Guide to Getting Started with Windows ETW"/></a><div class="content"><a class="title" href="/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/" title="Detailed Guide to Getting Started with Windows ETW">Detailed Guide to Getting Started with Windows ETW</a><time datetime="2024-07-07T09:27:28.000Z" title="Created 2024-07-07 17:27:28">2024-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/" title="Understanding Yara, Sigma, and Snort Rules in Cybersecurity"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Understanding Yara, Sigma, and Snort Rules in Cybersecurity"/></a><div class="content"><a class="title" href="/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/" title="Understanding Yara, Sigma, and Snort Rules in Cybersecurity">Understanding Yara, Sigma, and Snort Rules in Cybersecurity</a><time datetime="2024-07-06T12:59:38.000Z" title="Created 2024-07-06 20:59:38">2024-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/OSINT-Exercise-001-walkthrough/" title="OSINT Exercise 001 walkthrough"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OSINT Exercise 001 walkthrough"/></a><div class="content"><a class="title" href="/2024/06/25/OSINT-Exercise-001-walkthrough/" title="OSINT Exercise 001 walkthrough">OSINT Exercise 001 walkthrough</a><time datetime="2024-06-25T09:26:20.000Z" title="Created 2024-06-25 17:26:20">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/25/basic-mod-1/" title="basic mod 1"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="basic mod 1"/></a><div class="content"><a class="title" href="/2024/03/25/basic-mod-1/" title="basic mod 1">basic mod 1</a><time datetime="2024-03-24T20:19:11.000Z" title="Created 2024-03-25 04:19:11">2024-03-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Sharkkcode</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Understanding Yara, Sigma, and Snort Rules in Cybersecurity | Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</title><meta name="author" content="Sharkkcode"><meta name="copyright" content="Sharkkcode"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Understanding Yara, Sigma, and Snort Rules in Cybersecurity In the field of cybersecurity, Yara , Sigma , and Snort are essential tools used for creating and implementing rules to detect and respond t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding Yara, Sigma, and Snort Rules in Cybersecurity">
+<meta property="og:url" content="https://sharkkcode.github.io/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/index.html">
+<meta property="og:site_name" content="Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD">
+<meta property="og:description" content="Understanding Yara, Sigma, and Snort Rules in Cybersecurity In the field of cybersecurity, Yara , Sigma , and Snort are essential tools used for creating and implementing rules to detect and respond t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sharkkcode.github.io/img/wall.jpg">
+<meta property="article:published_time" content="2024-07-06T12:59:38.000Z">
+<meta property="article:modified_time" content="2024-07-06T13:17:35.000Z">
+<meta property="article:author" content="Sharkkcode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sharkkcode.github.io/img/wall.jpg"><link rel="shortcut icon" href="/img/fishingcat.jpg"><link rel="canonical" href="https://sharkkcode.github.io/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Understanding Yara, Sigma, and Snort Rules in Cybersecurity',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-06 21:17:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2445008510937449" crossorigin="anonymous"></script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/fishingcat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/wall.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Understanding Yara, Sigma, and Snort Rules in Cybersecurity</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-06T12:59:38.000Z" title="Created 2024-07-06 20:59:38">2024-07-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-06T13:17:35.000Z" title="Updated 2024-07-06 21:17:35">2024-07-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Information-Security/">Information Security</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Understanding Yara, Sigma, and Snort Rules in Cybersecurity"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="understanding-yara-sigma-and-snort-rules-in-cybersecurity">Understanding Yara, Sigma, and Snort Rules in Cybersecurity</h1>
+<p>In the field of cybersecurity, <strong>Yara</strong> , <strong>Sigma</strong> , and <strong>Snort</strong> are essential tools used for creating and implementing rules to detect and respond to security threats. Each tool serves a unique purpose and has its own strengths and weaknesses. This article provides an overview of these tools, including a practical examples of Yara rules and detailed installation and usage instructions for the Windows enviroment.</p>
+<h2 id="overview">Overview</h2>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 31%" />
+<col style="width: 12%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Primary Use</th>
+<th>Rule Format</th>
+<th>Main Strengths</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yara</td>
+<td>Malware research and classification</td>
+<td>Custom language</td>
+<td>Identifying specific file patterns and characteristics</td>
+</tr>
+<tr class="even">
+<td>Sigma</td>
+<td>Log data pattern detection</td>
+<td>YAML</td>
+<td>Standardized log event detection for SIEM systems</td>
+</tr>
+<tr class="odd">
+<td>Snort</td>
+<td>Network intrusion detection</td>
+<td>Custom format</td>
+<td>Detecting network traffic patterns indicating malicious activity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="yara-rule">Yara rule</h2>
+<p>Yara is specifically designed for creating and matching patterns in files or data streams. It is primarily used for <strong>malware research</strong> and <strong>classification</strong> . Yara rules are written in a custom language that allows researchers to define patterns based on <strong>strings</strong> , <strong>binary sequences</strong> , and <strong>regular expressions</strong> .</p>
+<h2 id="yara-rule---example">Yara rule - Example</h2>
+<h3 id="yara-download-link">Yara Download link :</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/VirusTotal/yara/releases">https://github.com/VirusTotal/yara/releases</a></li>
+</ul>
+<h3 id="create-4-test-file-with-this-python-script">Create 4 test file with this python script :</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create test files for Yara rule example</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_test_files</span>():</span><br><span class="line">    <span class="comment"># Test file 1: Contains a string literal</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;testfile1.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(<span class="string">&quot;This is a test file with a malicious_string inside.\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Test file 2: Contains a hexadecimal byte sequence</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;testfile2.txt&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        hex_sequence = <span class="built_in">bytes</span>([<span class="number">0x6A</span>, <span class="number">0x40</span>, <span class="number">0x68</span>, <span class="number">0x00</span>, <span class="number">0x30</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x6A</span>, <span class="number">0x14</span>, <span class="number">0x8D</span>, <span class="number">0x91</span>])</span><br><span class="line">        file.write(<span class="string">b&quot;This file contains a hexadecimal sequence: &quot;</span>)</span><br><span class="line">        file.write(hex_sequence)</span><br><span class="line">        file.write(<span class="string">b&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Test file 3: Contains a pattern that matches the regular expression</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;testfile3.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(<span class="string">&quot;This file contains a pattern that matches the regular expression: attack_pattern.\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Test file 4: Benign file with no malicious content</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;testfile4.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(<span class="string">&quot;This is a benign file with no malicious content.\n&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    create_test_files()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Test files created successfully.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Create an yara rule file ( <code>rule.yar</code> ) with the content bellow :</p>
+<blockquote>
+<p>I am using <code>json</code> to parse this code block simply because it looks nicer when parsed XDDD</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">rule ComprehensiveRule <span class="punctuation">&#123;</span></span><br><span class="line">    meta<span class="punctuation">:</span></span><br><span class="line">        <span class="comment">// Brief description of what the rule does</span></span><br><span class="line">        description = <span class="string">&quot;Detects various malicious patterns&quot;</span></span><br><span class="line">        <span class="comment">// Name or role of the person who created the rule</span></span><br><span class="line">        author = <span class="string">&quot;Security Analyst&quot;</span></span><br><span class="line">        <span class="comment">// Date when the rule was created or last modified</span></span><br><span class="line">        date = <span class="string">&quot;2024-07-06&quot;</span></span><br><span class="line">    </span><br><span class="line">    strings<span class="punctuation">:</span></span><br><span class="line">        <span class="comment">// String literal: the rule will match this exact string</span></span><br><span class="line">        $string_literal = <span class="string">&quot;malicious_string&quot;</span></span><br><span class="line">        <span class="comment">// Hexadecimal byte sequence: the rule will match this specific sequence of bytes</span></span><br><span class="line">        $hex_sequence = <span class="punctuation">&#123;</span> <span class="number">6</span>A <span class="number">40</span> <span class="number">68</span> <span class="number">00</span> <span class="number">30</span> <span class="number">00</span> <span class="number">00</span> <span class="number">6</span>A <span class="number">14</span> <span class="number">8</span>D <span class="number">91</span> <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="comment">// Regular expression: the rule will match any string that fits this regex pattern</span></span><br><span class="line">        $regex_pattern = /attack_<span class="punctuation">[</span>a-z<span class="punctuation">]</span>+/</span><br><span class="line">    </span><br><span class="line">    condition<span class="punctuation">:</span></span><br><span class="line">        <span class="comment">// The rule will match if any one of the defined patterns is found in the file</span></span><br><span class="line">        $string_literal or $hex_sequence or $regex_pattern</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="run-yara">Run Yara</h3>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/main/img/yara_sigma_snort/rr1.png" /></p>
+<p>Based on the results, it can be seen that <code>testfile1.txt</code> , <code>testfile2.txt</code> , and <code>testfile3.txt</code> have been detected for their characteristics, while <code>testfile4.txt</code> has not.</p>
+<h2 id="sigma-rule">Sigma rule</h2>
+<p>Sigma is a generic signature format used to describe <strong>log data patterns</strong> in a standardized way. It is primarily used for creating detection rules for security events in log data. The goal of Sigma is to provide a common language for describing log events, which can then be converted to specific queries for various <strong>SIEM (Security Information and Event Management)</strong> systems.</p>
+<h3 id="key-features-of-sigma">Key Features of Sigma:</h3>
+<ol type="1">
+<li><p><strong>Standardized Format :</strong> Sigma uses a YAML format to define rules. This makes the rules easy to read and write, and allows for straightforward conversion to other formats.</p></li>
+<li><p><strong>Flexibility :</strong> Sigma rules can be used with a wide range of log sources, including network devices, operating systems, applications, and security tools.</p></li>
+<li><p><strong>Compatibility :</strong> Sigma rules can be converted into the query languages of different SIEM systems, such as Splunk, ElasticSearch, and ArcSight.</p></li>
+</ol>
+<h3 id="how-sigma-rules-work">How Sigma Rules Work:</h3>
+<ol type="1">
+<li><p><strong>Rule Definition :</strong> A Sigma rule is defined in a YAML file, containing several sections such as title, id, description, status, author, logsource, detection, fields, falsepositives, and level.</p></li>
+<li><p><strong>Detection Logic :</strong> The core of a Sigma rule is its detection section, where the conditions for matching log events are defined. These conditions can include <strong>strings</strong> , <strong>regex patterns</strong> , and <strong>logical operators</strong> .</p></li>
+<li><p><strong>Conversion :</strong> Sigma rules are converted to the native query language of the target SIEM system using a converter tool like <code>sigmac</code> . This ensures that the same Sigma rule can be used <strong>across different platforms</strong> without manual rewriting.</p></li>
+</ol>
+<h3 id="example-use-cases">Example Use Cases:</h3>
+<ul>
+<li><p><strong>Detecting Suspicious Command Lines :</strong> A Sigma rule can be used to identify suspicious command-line activity, such as the use of PowerShell with certain flags that are often associated with malicious behavior.</p></li>
+<li><p><strong>Monitoring for Brute Force Attacks :</strong> Sigma rules can be set up to detect patterns in authentication logs that indicate brute force attempts, such as repeated failed login attempts followed by a successful login.</p></li>
+<li><p><strong>Identifying Data Exfiltration :</strong> By analyzing log data for large data transfers to external IP addresses, Sigma rules can help detect potential data exfiltration attempts.</p></li>
+</ul>
+<p>Sigma rules themselves do not directly indicate if there is a security threat; they are designed to be translated into SIEM queries that perform the actual detection. Once translated and implemented in a SIEM system like Splunk, the SIEM will execute the query against the collected logs and generate alerts based on the rule's criteria.</p>
+<p>For example, after converting the Sigma rule to Splunk format, you can set up a Splunk alert:</p>
+<ul>
+<li><p><strong>Log into Splunk :</strong> Access your Splunk instance through a web browser.</p></li>
+<li><p><strong>Create a New Search :</strong> Paste the converted query into the search bar and run it.</p></li>
+<li><p><strong>Save the Search as an Alert :</strong> Click on "Save As" and select "Alert". Configure the alert conditions (e.g., trigger alert if results are found). Set up alert actions (e.g., send email, trigger webhook).</p></li>
+<li><p><strong>Monitor Alerts :</strong> Continuously monitor the alerts generated by the rule and refine the detection logic as needed to reduce false positives and improve accuracy.</p></li>
+</ul>
+<h2 id="snort-rule">Snort rule</h2>
+<p>Snort is an open-source Intrusion Detection System (IDS) that uses rules to detect and prevent <strong>network intrusions and attacks</strong> . Snort can be configured to operate as an intrusion detection system (IDS) or an intrusion prevention system (IPS).</p>
+<h3 id="key-features-of-snort">Key Features of Snort:</h3>
+<ol type="1">
+<li><p><strong>Real-Time Traffic Analysis :</strong> Snort performs real-time packet logging and analysis, allowing it to detect a wide range of network attacks and suspicious activities.</p></li>
+<li><p><strong>Rule-Based Detection :</strong> Snort uses a powerful rule-based language to define traffic patterns that should be logged or blocked.</p></li>
+<li><p><strong>Flexibility and Customization :</strong> Users can create custom rules to detect specific threats unique to their environment.</p></li>
+</ol>
+<h3 id="how-snort-rules-work">How Snort Rules Work:</h3>
+<ol type="1">
+<li><p><strong>Rule Structure :</strong> A Snort rule consists of two main parts: the rule header and the rule options. The rule header specifies the action (alert, log, pass), protocol, source and destination IP addresses, and ports. The rule options contain the specific conditions to match, such as <strong>content</strong> , <strong>byte patterns</strong> , or <strong>regular expressions</strong> .</p></li>
+<li><p><strong>Detection Engine :</strong> When Snort analyzes network traffic, it matches packets against the rules in its rule set. If a packet matches a rule, the specified action is taken, such as generating an alert or logging the packet.</p></li>
+<li><p><strong>Preprocessors :</strong> Snort can use preprocessors to analyze and manipulate packets before they are evaluated against the rules. Preprocessors can detect anomalies, normalize packet data, and decode various protocols.</p></li>
+</ol>
+<h3 id="example-use-cases-1">Example Use Cases:</h3>
+<ul>
+<li><p><strong>Detecting Malware Traffic :</strong> Snort rules can be written to detect network traffic patterns associated with known malware, such as specific HTTP request headers or URI patterns.</p></li>
+<li><p><strong>Identifying Port Scans :</strong> Snort can detect port scanning activity by monitoring for multiple connection attempts to different ports on the same host within a short time frame.</p></li>
+<li><p><strong>Blocking SQL Injection Attacks :</strong> By analyzing HTTP requests for common SQL injection patterns, Snort can identify and block potential SQL injection attempts.</p></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Yara, Sigma, and Snort are powerful tools that serve different purposes in the realm of cybersecurity. Yara excels in identifying specific patterns in files, making it indispensable for <strong>malware research</strong> and <strong>classification</strong> . Sigma provides a standardized way to describe <strong>log events</strong> , enabling consistent and flexible detection across various <strong>SIEM systems</strong> . Snort offers real-time <strong>traffic analysis</strong> and <strong>intrusion detection</strong> , allowing organizations to protect their <strong>networks</strong> from a wide range of attacks.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://yara.readthedocs.io/en/stable/writingrules.html">https://yara.readthedocs.io/en/stable/writingrules.html</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.picussecurity.com/resource/glossary/what-is-sigma-rule">https://www.picussecurity.com/resource/glossary/what-is-sigma-rule</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.snort.org/">https://www.snort.org/</a></p></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io">Sharkkcode</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/">https://sharkkcode.github.io/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/"><img class="prev-cover" src="/img/wall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Detailed Guide to Getting Started with Windows ETW</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/25/OSINT-Exercise-001-walkthrough/"><img class="next-cover" src="/img/wall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">OSINT Exercise 001 walkthrough</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/fishingcat.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sharkkcode</div><div class="author-info__description">Keep Learning</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sharkkcode"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my BLOG ~~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#understanding-yara-sigma-and-snort-rules-in-cybersecurity"><span class="toc-number">1.</span> <span class="toc-text">Understanding Yara, Sigma, and Snort Rules in Cybersecurity</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#overview"><span class="toc-number">1.1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yara-rule"><span class="toc-number">1.2.</span> <span class="toc-text">Yara rule</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yara-rule---example"><span class="toc-number">1.3.</span> <span class="toc-text">Yara rule - Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yara-download-link"><span class="toc-number">1.3.1.</span> <span class="toc-text">Yara Download link :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-4-test-file-with-this-python-script"><span class="toc-number">1.3.2.</span> <span class="toc-text">Create 4 test file with this python script :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#run-yara"><span class="toc-number">1.3.3.</span> <span class="toc-text">Run Yara</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sigma-rule"><span class="toc-number">1.4.</span> <span class="toc-text">Sigma rule</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#key-features-of-sigma"><span class="toc-number">1.4.1.</span> <span class="toc-text">Key Features of Sigma:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how-sigma-rules-work"><span class="toc-number">1.4.2.</span> <span class="toc-text">How Sigma Rules Work:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-use-cases"><span class="toc-number">1.4.3.</span> <span class="toc-text">Example Use Cases:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#snort-rule"><span class="toc-number">1.5.</span> <span class="toc-text">Snort rule</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#key-features-of-snort"><span class="toc-number">1.5.1.</span> <span class="toc-text">Key Features of Snort:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how-snort-rules-work"><span class="toc-number">1.5.2.</span> <span class="toc-text">How Snort Rules Work:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-use-cases-1"><span class="toc-number">1.5.3.</span> <span class="toc-text">Example Use Cases:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">1.6.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reference"><span class="toc-number">1.7.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CVE-2024-6239"/></a><div class="content"><a class="title" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239">CVE-2024-6239</a><time datetime="2024-08-30T16:07:12.000Z" title="Created 2024-08-31 00:07:12">2024-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/" title="Detailed Guide to Getting Started with Windows ETW"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Detailed Guide to Getting Started with Windows ETW"/></a><div class="content"><a class="title" href="/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/" title="Detailed Guide to Getting Started with Windows ETW">Detailed Guide to Getting Started with Windows ETW</a><time datetime="2024-07-07T09:27:28.000Z" title="Created 2024-07-07 17:27:28">2024-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/" title="Understanding Yara, Sigma, and Snort Rules in Cybersecurity"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Understanding Yara, Sigma, and Snort Rules in Cybersecurity"/></a><div class="content"><a class="title" href="/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/" title="Understanding Yara, Sigma, and Snort Rules in Cybersecurity">Understanding Yara, Sigma, and Snort Rules in Cybersecurity</a><time datetime="2024-07-06T12:59:38.000Z" title="Created 2024-07-06 20:59:38">2024-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/OSINT-Exercise-001-walkthrough/" title="OSINT Exercise 001 walkthrough"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OSINT Exercise 001 walkthrough"/></a><div class="content"><a class="title" href="/2024/06/25/OSINT-Exercise-001-walkthrough/" title="OSINT Exercise 001 walkthrough">OSINT Exercise 001 walkthrough</a><time datetime="2024-06-25T09:26:20.000Z" title="Created 2024-06-25 17:26:20">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/25/basic-mod-1/" title="basic mod 1"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="basic mod 1"/></a><div class="content"><a class="title" href="/2024/03/25/basic-mod-1/" title="basic mod 1">basic mod 1</a><time datetime="2024-03-24T20:19:11.000Z" title="Created 2024-03-25 04:19:11">2024-03-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Sharkkcode</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
