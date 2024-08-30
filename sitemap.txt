@@ -47,6 +47,7 @@ https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/TA/
 https://sharkkcode.github.io/tags/Crypto/
 https://sharkkcode.github.io/tags/PWN/
+https://sharkkcode.github.io/tags/CVE/
 https://sharkkcode.github.io/tags/Windows/
 https://sharkkcode.github.io/tags/ETW/
 https://sharkkcode.github.io/tags/note/
