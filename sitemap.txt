@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2024/09/05/Web-Security-Academy-SQL-injection-Writeups/
 https://sharkkcode.github.io/2024/08/31/CVE-2024-6239/
 https://sharkkcode.github.io/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/
 https://sharkkcode.github.io/2024/07/06/Understanding-Yara-Sigma-and-Snort-Rules-in-Cybersecurity/
@@ -55,6 +56,8 @@ https://sharkkcode.github.io/tags/OSINT/
 https://sharkkcode.github.io/tags/integrate/
 https://sharkkcode.github.io/tags/SHELLCTF/
 https://sharkkcode.github.io/tags/Program-Security/
+https://sharkkcode.github.io/tags/Web-Security-Academy/
+https://sharkkcode.github.io/tags/SQL-injection/
 https://sharkkcode.github.io/categories/Information-Security/
 https://sharkkcode.github.io/categories/Artificial-Intelligence/
 https://sharkkcode.github.io/categories/Data-Science/
