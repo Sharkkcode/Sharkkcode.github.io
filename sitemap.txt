@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2024/09/13/CSAW-CTF-Qualification-Round-2024-Writeups/
 https://sharkkcode.github.io/2024/09/05/Web-Security-Academy-SQL-injection-Writeups/
 https://sharkkcode.github.io/2024/08/31/CVE-2024-6239/
 https://sharkkcode.github.io/2024/07/07/Detailed-Guide-to-Getting-Started-with-Windows-ETW/
