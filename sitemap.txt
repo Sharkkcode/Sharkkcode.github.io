@@ -45,10 +45,10 @@ https://sharkkcode.github.io/
 https://sharkkcode.github.io/tags/CTF/
 https://sharkkcode.github.io/tags/ML/
 https://sharkkcode.github.io/tags/homework/
-https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/TA/
-https://sharkkcode.github.io/tags/Crypto/
 https://sharkkcode.github.io/tags/PWN/
+https://sharkkcode.github.io/tags/Crypto/
+https://sharkkcode.github.io/tags/ANN/
 https://sharkkcode.github.io/tags/CVE/
 https://sharkkcode.github.io/tags/Windows/
 https://sharkkcode.github.io/tags/ETW/
