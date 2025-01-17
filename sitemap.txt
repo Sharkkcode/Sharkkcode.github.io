@@ -1,3 +1,4 @@
+https://sharkkcode.github.io/2025/01/17/Use-Ghidra-to-find-the-offset-of-SSL-write-in-the-chrome-dll-file-from-Chrome-version-129-0-6668-71/
 https://sharkkcode.github.io/2024/09/05/Web-Security-Academy-SQL-injection-Writeups/
 https://sharkkcode.github.io/2024/09/13/CSAW-CTF-Qualification-Round-2024-Writeups/
 https://sharkkcode.github.io/2024/08/31/CVE-2024-6239/
@@ -45,10 +46,10 @@ https://sharkkcode.github.io/
 https://sharkkcode.github.io/tags/CTF/
 https://sharkkcode.github.io/tags/ML/
 https://sharkkcode.github.io/tags/homework/
-https://sharkkcode.github.io/tags/TA/
-https://sharkkcode.github.io/tags/PWN/
-https://sharkkcode.github.io/tags/Crypto/
 https://sharkkcode.github.io/tags/ANN/
+https://sharkkcode.github.io/tags/TA/
+https://sharkkcode.github.io/tags/Crypto/
+https://sharkkcode.github.io/tags/PWN/
 https://sharkkcode.github.io/tags/CVE/
 https://sharkkcode.github.io/tags/Windows/
 https://sharkkcode.github.io/tags/ETW/
