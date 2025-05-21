@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>OSINT Exercise 011 walkthrough | Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</title><meta name="keywords" content="OSINT"><meta name="author" content="Sharkkcode"><meta name="copyright" content="Sharkkcode"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="11 中文版本 題目網址：  https:&#x2F;&#x2F;gralhix.com&#x2F;list-of-osint-exercises&#x2F;osint-exercise-011&#x2F;          任務要求：找出圖中四位人物的名稱。     這題我找 剝殼雞蛋 跟我一起解，原先是想要比誰先解出來，但是因為太難所以決定合作🥺   我們的解題過程如下：  首先先放個我們看完題目後的心理狀態：           單看圖片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSINT Exercise 011 walkthrough">
+<meta property="og:url" content="https://sharkkcode.github.io/2025/05/21/OSINT-Exercise-011-walkthrough/index.html">
+<meta property="og:site_name" content="Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD">
+<meta property="og:description" content="11 中文版本 題目網址：  https:&#x2F;&#x2F;gralhix.com&#x2F;list-of-osint-exercises&#x2F;osint-exercise-011&#x2F;          任務要求：找出圖中四位人物的名稱。     這題我找 剝殼雞蛋 跟我一起解，原先是想要比誰先解出來，但是因為太難所以決定合作🥺   我們的解題過程如下：  首先先放個我們看完題目後的心理狀態：           單看圖片">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sharkkcode.github.io/img/wall.jpg">
+<meta property="article:published_time" content="2025-05-21T15:17:36.000Z">
+<meta property="article:modified_time" content="2025-05-21T15:25:54.001Z">
+<meta property="article:author" content="Sharkkcode">
+<meta property="article:tag" content="OSINT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sharkkcode.github.io/img/wall.jpg"><link rel="shortcut icon" href="/img/fishingcat.jpg"><link rel="canonical" href="https://sharkkcode.github.io/2025/05/21/OSINT-Exercise-011-walkthrough/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OSINT Exercise 011 walkthrough',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-05-21 23:25:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2445008510937449" crossorigin="anonymous"></script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/fishingcat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/wall.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OSINT Exercise 011 walkthrough</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-21T15:17:36.000Z" title="Created 2025-05-21 23:17:36">2025-05-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-21T15:25:54.001Z" title="Updated 2025-05-21 23:25:54">2025-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OSINT Exercise 011 walkthrough"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="中文版本">11 中文版本</h2>
+<p>題目網址：</p>
+<ul>
+<li>https://gralhix.com/list-of-osint-exercises/osint-exercise-011/</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><img src="./imgs/oo29.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>任務要求：找出圖中四位人物的名稱。</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>這題我找 <strong>剝殼雞蛋</strong> 跟我一起解，原先是想要比誰先解出來，但是因為太難所以決定合作🥺</p>
+</blockquote>
+<p><img src="./imgs/oo63.png" /></p>
+<p><strong>我們的解題過程如下：</strong></p>
+<ul>
+<li><p>首先先放個我們看完題目後的心理狀態：</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo59.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo60.png" /></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<ol type="1">
+<li><p>單看圖片沒有什麼頭緒，先用圖片搜尋來看有沒有其他的線索。</p></li>
+<li><p>找到 <a target="_blank" rel="noopener" href="https://reliefweb.int/report/libya/libyan-parties-delay-naming-unity-government-un-urges-steps-end-political-divisions"><em>As Libyan parties delay naming unity government, UN urges steps to end political divisions</em></a> 這篇文章，其中有一張圖片幾乎與原圖如出一轍，圖片下方有註釋：「 Signing of the Libyan Political Agreement in Skhirat, Morocco, 17 December 2015. 」 ，到這邊我們可以推斷出幾件事情：</p>
+<ul>
+<li>知道照片拍攝於 2015/12/17 。</li>
+<li>影片中的人們應該正在簽署 Libyan Political Agreement 。</li>
+<li>地點位於 Skhirat, Morocco 。</li>
+</ul></li>
+<li><p>由於步驟 2 所提到的那篇文章中並未提供足以深入追查的線索，我們決定擴大搜尋範圍，尋找更多相關新聞進行比對，值得注意的是，該文章標明其資訊來源為 <a target="_blank" rel="noopener" href="https://news.un.org/en/"><em>United Nations</em></a> 。</p></li>
+<li><p>我們接著使用 Google Hacking 技巧，在 <code>news.un.org</code> 網站中搜尋關鍵字 <code>Libyan Political Agreement</code> ，搜尋語法如下：</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:news.un.org &quot;Libyan Political Agreement&quot;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>從步驟 4 的搜尋結果中找到了 <a target="_blank" rel="noopener" href="https://news.un.org/en/story/2015/12/518412-un-welcomes-historic-signing-libyan-political-agreement"><em>UN welcomes ‘historic’ signing of Libyan Political Agreement</em></a> 這篇文章，其時間地點都與題目的那張照片類似，並且其中有一幅圖給了更多人的照片，這可能是一個不錯的線索：</p>
+<p><img src="./imgs/oo30.png" /></p></li>
+<li><p>用步驟 5 拿到的圖再去以圖搜圖後我找到 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/photos-libyan-parties-sign-libyan-political-agreement-skhirat-morocco-17-december-2015"><em>Photos: Libyan parties sign the Libyan Political Agreement in Skhirat, Morocco, 17 December 2015</em></a> 這篇文章，文章中出現了多張與題目圖片時間、地點相近的照片，其中一張正是題目本身的圖片。我們將其餘這些相似圖片整理如下，並依序編號，方便後續觀察與比對：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">編號</th>
+<th style="text-align: center;">圖片</th>
+<th style="text-align: center;">編號</th>
+<th style="text-align: center;">圖片</th>
+<th style="text-align: center;">編號</th>
+<th style="text-align: center;">圖片</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><img src="./imgs/oo31.png" /></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><img src="./imgs/oo32.png" /></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><img src="./imgs/oo33.png" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><img src="./imgs/oo34.png" /></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><img src="./imgs/oo35.png" /></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><img src="./imgs/oo36.png" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><img src="./imgs/oo39.png" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"><img src="./imgs/oo40.png" /></td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><img src="./imgs/oo41.png" /></td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;"><img src="./imgs/oo42.png" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;"><img src="./imgs/oo43.png" /></td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;"><img src="./imgs/oo44.png" /></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;"><img src="./imgs/oo45.png" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">16</td>
+<td style="text-align: center;"><img src="./imgs/oo46.png" /></td>
+<td style="text-align: center;">🈚</td>
+<td style="text-align: center;">🈳</td>
+<td style="text-align: center;">🈚</td>
+<td style="text-align: center;">🈳</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>從步驟 5 和步驟 6 可以看出有些人長得很像，為了方便記憶我們用代號 ( A, B, C, D ) 的方式代表四位目標人物：</p>
+<p><img src="./imgs/oo47.png" /></p></li>
+<li><p>整理步驟 5 和步驟 6 中看起來像是目標 A 的人物：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">步驟 6 編號 7</th>
+<th style="text-align: center;">步驟 6 編號 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>目標 A 在簽署當日 <strong>膚色較深</strong> ， <strong>無禿頭</strong> ， 一襲 <strong>深藍西裝</strong> 筆挺得體。根據步驟 6 的第 8 號圖片，可見其側臉與部分正面輪廓，有助於進一步辨識。</li>
+</ul></li>
+<li><p>整理步驟 5 和步驟 6 中看起來像是目標 B 的人物：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">步驟 6 編號 7</th>
+<th style="text-align: center;">步驟 6 編號 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>與步驟 8 相同，我目前能確定包含目標 B 的，僅有這兩張圖片。簽署當日，他的特徵為 <strong>膚色較淺</strong> ， <strong>有禿頭</strong> ， <strong>禿頂側緣的髮絲微黑</strong> ，並坐在目標 A 的右側。</p></li>
+<li><p>雖然步驟 6 中的編號 1、2 和 11 也出現了相似特徵，但由於該人物當天配戴眼鏡，且面部角度不同，我無法確認其五官是否與目標 B 完全一致。</p></li>
+</ul></li>
+<li><p>整理步驟 5 和步驟 6 中看起來像是目標 C 的人物：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">步驟 6 編號 7</th>
+<th style="text-align: center;">步驟 5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo30.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">步驟 6 編號 14</th>
+<th style="text-align: center;">步驟 6 編號 15</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo44.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo45.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>目標 C 在簽署當日的特徵為 <strong>膚色較淺</strong> 、 <strong>沒有禿頭</strong> 、 <strong>紅色領帶</strong> 和 <strong>配戴眼鏡</strong> ，基本上這些圖片有包含正面視角，面部資訊相當充足。</li>
+</ul></li>
+<li><p>在整理步驟 5 與步驟 6 中疑似為目標 D 的人物時，暫時無法確認他是否也出現在其他畫面中，不過，我們仍將他的特徵記錄如下： <strong>膚色較淺</strong> 、 <strong>有禿頭</strong> ，以及一顆 <strong>略顯肥厚的下巴</strong> 。</p></li>
+<li><p>從步驟 8~11 中大致找到的圖片資訊其實還是無法直接找出目標人物的名字，這時候我們想到，既然 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/photos-libyan-parties-sign-libyan-political-agreement-skhirat-morocco-17-december-2015"><em>Photos: Libyan parties sign the Libyan Political Agreement in Skhirat, Morocco, 17 December 2015</em></a> 這篇文章有提到「 Libyan parties sign the Libyan Political Agreement 」，那是不是應該會有記者去拍他們的簽名的照片？</p></li>
+<li><p>透過搜尋「 Libyan parties sign the Libyan Political Agreement 」我查到了 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇有簽完名的照片的文章，但有一個 <strong>奇怪的地方</strong> ，就是簽名的日期是 2025/7/11 ，但是題目的照片 2025/12/17 ，時間對不上，而且我稍微搜尋了一下後，並沒有找到 2025/12/17 的簽名照片，不過如果這兩次簽名都有相同的人物在簽名的話，那該簽名資訊還是有助於找到 4 位目標人物的名稱，只是 2025/12/17 的簽名活動沒有圖片佐證有點奇怪就是了。目前的理解是 2025/7/11 簽署的是 Libyan Political Agreement 的「草案」，因為文章標題有寫「 initial 」，那簽署的人應該與題目照片中簽署的人大同小異。</p></li>
+<li><p>觀察 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇文章的線索，先分析一下簽名後照片：</p>
+<p><img src="./imgs/oo50.png" /></p>
+<ul>
+<li><p>左頁標題的翻譯應該是「 Libyan Political Agreement, Witnesses 」；右頁標題的翻譯應該是「 Libyan Political Agreement, Initial Signatories 」。</p></li>
+<li><p>如果我可以直接辨識出上面所有人的簽名和文字訊息就可以直接用他們的名稱去查詢，然後直接對應目標人物，但是照片中的簽名和某些印刷文字太模糊了，無法精確把所有資訊都辨識出來。</p></li>
+</ul></li>
+<li><p>繼續分析 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇文章的圖片，我們發現了幾張疑似目標人物的簽名：</p>
+<ul>
+<li><p>此人疑似對應到目標 A ，並且有對應的簽名的照片加上模糊名牌：</p>
+<p><img src="./imgs/oo51.png" /></p></li>
+<li><p>此人疑似對應到目標 B ，並且有對應的簽名的照片：</p>
+<p><img src="./imgs/oo52.png" /></p></li>
+<li><p>此人疑似對應到目標 C ，並且有對應的簽名的照片，但較為模糊，難對應：</p>
+<p><img src="./imgs/oo53.png" /></p></li>
+<li><p>此人疑似對應到目標 D ，沒有看到對應簽名位置的照片：</p>
+<p><img src="./imgs/oo54.png" /></p></li>
+</ul></li>
+<li><p>現在開始對應簽名訊息，把目標 A 對應到的簽名相關文字拿去給 Google 解析，可以直接查到 Salih Hama bakdah 這個人物，目標 A 的名字到這邊已經找到！</p>
+<p><img src="./imgs/oo55.png" /></p></li>
+<li><p>繼續對應簽名訊息，把目標 B 對應到的簽名相關文字拿去給 Google 解析，可以直接查到 Fadil Al-Amin 這個人物 ( 當然，我們有把它翻譯成英文🤣 ) ，目標 B 的名字到這邊已經找到！</p>
+<p><img src="./imgs/oo56.png" /></p></li>
+<li><p>一樣用類似的方式找到 Mustafa Abu Shagour 也就是目標 C ！</p>
+<p><img src="./imgs/oo57.png" /></p></li>
+<li><p>不過我們查完所有可以辨識的簽名相關文字後，沒找到目標 D ，我們後來直接重頭開始整理關於目標 D 的所有訊息，但是 Google 圖片搜尋實在找不太到該人物。由於簽署國際協議這種場合應該會有很多記者去攝影，故我們把我們的搜尋平台轉到 <a target="_blank" rel="noopener" href="https://www.gettyimages.hk/">gettyimages</a> 上，然而直接搜尋 Libyan Political Agreement 會沒有結果，所以我們搜尋 Libya Skhirat Morocco ，就找到了 Mohammed Maazab ，也就是目標 D ！到這邊四位目標人物的名稱都已經找到！</p>
+<p><img src="./imgs/oo58.png" /></p>
+<ul>
+<li>由於剛好看到該網站出現可能要購買圖片授權才能使用圖片的文字訊息，所以我們就不把那些圖放上來了😅</li>
+</ul></li>
+<li><p>最終目標代號對應到的名稱如下：</p>
+<p><img src="./imgs/oo47.png" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; Salih Hama bakdah</span><br><span class="line">B --&gt; Fadil Al-Amin</span><br><span class="line">C --&gt; Mustafa Abu Shagour</span><br><span class="line">D --&gt; Mohammed Maazab</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><p>終於解完了，這是我們解完題目後的心理狀態：</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="./imgs/oo61.png" /></td>
+<td style="text-align: center;"><img src="./imgs/oo62.png" /></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io">Sharkkcode</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sharkkcode.github.io/2025/05/21/OSINT-Exercise-011-walkthrough/">https://sharkkcode.github.io/2025/05/21/OSINT-Exercise-011-walkthrough/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OSINT/">OSINT</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/01/17/Use-Ghidra-to-find-the-offset-of-SSL-write-in-the-chrome-dll-file-from-Chrome-version-129-0-6668-71/"><img class="next-cover" src="/img/wall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Use Ghidra to find the offset of SSL_write() in the chrome.dll file from Chrome version 129.0.6668.71</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/06/25/OSINT-Exercise-001-walkthrough/" title="OSINT Exercise 001 walkthrough"><img class="cover" src="/img/wall.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-25</div><div class="title">OSINT Exercise 001 walkthrough</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/fishingcat.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sharkkcode</div><div class="author-info__description">Keep Learning</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sharkkcode"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my BLOG ~~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text">11 中文版本</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/21/OSINT-Exercise-011-walkthrough/" title="OSINT Exercise 011 walkthrough"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OSINT Exercise 011 walkthrough"/></a><div class="content"><a class="title" href="/2025/05/21/OSINT-Exercise-011-walkthrough/" title="OSINT Exercise 011 walkthrough">OSINT Exercise 011 walkthrough</a><time datetime="2025-05-21T15:17:36.000Z" title="Created 2025-05-21 23:17:36">2025-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/17/Use-Ghidra-to-find-the-offset-of-SSL-write-in-the-chrome-dll-file-from-Chrome-version-129-0-6668-71/" title="Use Ghidra to find the offset of SSL_write() in the chrome.dll file from Chrome version 129.0.6668.71"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Use Ghidra to find the offset of SSL_write() in the chrome.dll file from Chrome version 129.0.6668.71"/></a><div class="content"><a class="title" href="/2025/01/17/Use-Ghidra-to-find-the-offset-of-SSL-write-in-the-chrome-dll-file-from-Chrome-version-129-0-6668-71/" title="Use Ghidra to find the offset of SSL_write() in the chrome.dll file from Chrome version 129.0.6668.71">Use Ghidra to find the offset of SSL_write() in the chrome.dll file from Chrome version 129.0.6668.71</a><time datetime="2025-01-17T11:36:39.000Z" title="Created 2025-01-17 19:36:39">2025-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/13/CSAW-CTF-Qualification-Round-2024-Writeups/" title="CSAW CTF Qualification Round 2024 Writeups"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSAW CTF Qualification Round 2024 Writeups"/></a><div class="content"><a class="title" href="/2024/09/13/CSAW-CTF-Qualification-Round-2024-Writeups/" title="CSAW CTF Qualification Round 2024 Writeups">CSAW CTF Qualification Round 2024 Writeups</a><time datetime="2024-09-12T16:18:39.000Z" title="Created 2024-09-13 00:18:39">2024-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/05/Web-Security-Academy-SQL-injection-Writeups/" title="Web Security Academy SQL injection Writeups"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web Security Academy SQL injection Writeups"/></a><div class="content"><a class="title" href="/2024/09/05/Web-Security-Academy-SQL-injection-Writeups/" title="Web Security Academy SQL injection Writeups">Web Security Academy SQL injection Writeups</a><time datetime="2024-09-05T14:15:41.000Z" title="Created 2024-09-05 22:15:41">2024-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239"><img src="/img/wall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CVE-2024-6239"/></a><div class="content"><a class="title" href="/2024/08/31/CVE-2024-6239/" title="CVE-2024-6239">CVE-2024-6239</a><time datetime="2024-08-30T16:07:12.000Z" title="Created 2024-08-31 00:07:12">2024-08-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Sharkkcode</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
