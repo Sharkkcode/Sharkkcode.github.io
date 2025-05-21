@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://sharkkcode.github.io/img/wall.jpg">
 <meta property="article:published_time" content="2025-05-21T15:17:36.000Z">
-<meta property="article:modified_time" content="2025-05-21T15:25:54.001Z">
+<meta property="article:modified_time" content="2025-05-21T15:31:52.751Z">
 <meta property="article:author" content="Sharkkcode">
 <meta property="article:tag" content="OSINT">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2025-05-21 23:25:54'
+  postUpdate: '2025-05-21 23:31:52'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,7 +142,7 @@
       }
     }
     detectApple()
-    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2445008510937449" crossorigin="anonymous"></script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/fishingcat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/wall.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OSINT Exercise 011 walkthrough</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-21T15:17:36.000Z" title="Created 2025-05-21 23:17:36">2025-05-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-21T15:25:54.001Z" title="Updated 2025-05-21 23:25:54">2025-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OSINT Exercise 011 walkthrough"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="中文版本">11 中文版本</h2>
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2445008510937449" crossorigin="anonymous"></script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/fishingcat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/wall.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Just a Blog by Sharkkcode ... 紀錄，也是一種享受生活的方式 XD</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/07/08/About-Sharkkcode/"><span> About</span></a></div><div class="menus_item"><a class="site-page" href="https://sharkkcode.github.io/2022/09/14/Portfolio/"><span> Portfolio</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OSINT Exercise 011 walkthrough</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-21T15:17:36.000Z" title="Created 2025-05-21 23:17:36">2025-05-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-21T15:31:52.751Z" title="Updated 2025-05-21 23:31:52">2025-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OSINT Exercise 011 walkthrough"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="中文版本">11 中文版本</h2>
 <p>題目網址：</p>
 <ul>
 <li>https://gralhix.com/list-of-osint-exercises/osint-exercise-011/</li>
@@ -150,7 +150,7 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><img src="./imgs/oo29.png" /></th>
+<th style="text-align: left;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo29.png" /></th>
 </tr>
 </thead>
 <tbody>
@@ -162,15 +162,15 @@
 <blockquote>
 <p>這題我找 <strong>剝殼雞蛋</strong> 跟我一起解，原先是想要比誰先解出來，但是因為太難所以決定合作🥺</p>
 </blockquote>
-<p><img src="./imgs/oo63.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo63.png" /></p>
 <p><strong>我們的解題過程如下：</strong></p>
 <ul>
 <li><p>首先先放個我們看完題目後的心理狀態：</p>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo59.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo60.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo59.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo60.png" /></td>
 </tr>
 </tbody>
 </table></li>
@@ -187,7 +187,7 @@
 <li><p>我們接著使用 Google Hacking 技巧，在 <code>news.un.org</code> 網站中搜尋關鍵字 <code>Libyan Political Agreement</code> ，搜尋語法如下：</p>
 <p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:news.un.org &quot;Libyan Political Agreement&quot;</span><br></pre></td></tr></table></figure></p></li>
 <li><p>從步驟 4 的搜尋結果中找到了 <a target="_blank" rel="noopener" href="https://news.un.org/en/story/2015/12/518412-un-welcomes-historic-signing-libyan-political-agreement"><em>UN welcomes ‘historic’ signing of Libyan Political Agreement</em></a> 這篇文章，其時間地點都與題目的那張照片類似，並且其中有一幅圖給了更多人的照片，這可能是一個不錯的線索：</p>
-<p><img src="./imgs/oo30.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo30.png" /></p></li>
 <li><p>用步驟 5 拿到的圖再去以圖搜圖後我找到 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/photos-libyan-parties-sign-libyan-political-agreement-skhirat-morocco-17-december-2015"><em>Photos: Libyan parties sign the Libyan Political Agreement in Skhirat, Morocco, 17 December 2015</em></a> 這篇文章，文章中出現了多張與題目圖片時間、地點相近的照片，其中一張正是題目本身的圖片。我們將其餘這些相似圖片整理如下，並依序編號，方便後續觀察與比對：</p>
 <table>
 <thead>
@@ -203,47 +203,47 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;"><img src="./imgs/oo31.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo31.png" /></td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;"><img src="./imgs/oo32.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo32.png" /></td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;"><img src="./imgs/oo33.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo33.png" /></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
-<td style="text-align: center;"><img src="./imgs/oo34.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo34.png" /></td>
 <td style="text-align: center;">5</td>
-<td style="text-align: center;"><img src="./imgs/oo35.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo35.png" /></td>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;"><img src="./imgs/oo36.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo36.png" /></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">7</td>
-<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo37.png" /></td>
 <td style="text-align: center;">8</td>
-<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo38.png" /></td>
 <td style="text-align: center;">9</td>
-<td style="text-align: center;"><img src="./imgs/oo39.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo39.png" /></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
-<td style="text-align: center;"><img src="./imgs/oo40.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo40.png" /></td>
 <td style="text-align: center;">11</td>
-<td style="text-align: center;"><img src="./imgs/oo41.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo41.png" /></td>
 <td style="text-align: center;">12</td>
-<td style="text-align: center;"><img src="./imgs/oo42.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo42.png" /></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">13</td>
-<td style="text-align: center;"><img src="./imgs/oo43.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo43.png" /></td>
 <td style="text-align: center;">14</td>
-<td style="text-align: center;"><img src="./imgs/oo44.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo44.png" /></td>
 <td style="text-align: center;">15</td>
-<td style="text-align: center;"><img src="./imgs/oo45.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo45.png" /></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">16</td>
-<td style="text-align: center;"><img src="./imgs/oo46.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo46.png" /></td>
 <td style="text-align: center;">🈚</td>
 <td style="text-align: center;">🈳</td>
 <td style="text-align: center;">🈚</td>
@@ -252,7 +252,7 @@
 </tbody>
 </table></li>
 <li><p>從步驟 5 和步驟 6 可以看出有些人長得很像，為了方便記憶我們用代號 ( A, B, C, D ) 的方式代表四位目標人物：</p>
-<p><img src="./imgs/oo47.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo47.png" /></p></li>
 <li><p>整理步驟 5 和步驟 6 中看起來像是目標 A 的人物：</p>
 <table>
 <thead>
@@ -263,8 +263,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo38.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -281,8 +281,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo38.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo38.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -300,8 +300,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo37.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo30.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo37.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo30.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -314,8 +314,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo44.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo45.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo44.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo45.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -326,7 +326,7 @@
 <li><p>從步驟 8~11 中大致找到的圖片資訊其實還是無法直接找出目標人物的名字，這時候我們想到，既然 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/photos-libyan-parties-sign-libyan-political-agreement-skhirat-morocco-17-december-2015"><em>Photos: Libyan parties sign the Libyan Political Agreement in Skhirat, Morocco, 17 December 2015</em></a> 這篇文章有提到「 Libyan parties sign the Libyan Political Agreement 」，那是不是應該會有記者去拍他們的簽名的照片？</p></li>
 <li><p>透過搜尋「 Libyan parties sign the Libyan Political Agreement 」我查到了 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇有簽完名的照片的文章，但有一個 <strong>奇怪的地方</strong> ，就是簽名的日期是 2025/7/11 ，但是題目的照片 2025/12/17 ，時間對不上，而且我稍微搜尋了一下後，並沒有找到 2025/12/17 的簽名照片，不過如果這兩次簽名都有相同的人物在簽名的話，那該簽名資訊還是有助於找到 4 位目標人物的名稱，只是 2025/12/17 的簽名活動沒有圖片佐證有點奇怪就是了。目前的理解是 2025/7/11 簽署的是 Libyan Political Agreement 的「草案」，因為文章標題有寫「 initial 」，那簽署的人應該與題目照片中簽署的人大同小異。</p></li>
 <li><p>觀察 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇文章的線索，先分析一下簽名後照片：</p>
-<p><img src="./imgs/oo50.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo50.png" /></p>
 <ul>
 <li><p>左頁標題的翻譯應該是「 Libyan Political Agreement, Witnesses 」；右頁標題的翻譯應該是「 Libyan Political Agreement, Initial Signatories 」。</p></li>
 <li><p>如果我可以直接辨識出上面所有人的簽名和文字訊息就可以直接用他們的名稱去查詢，然後直接對應目標人物，但是照片中的簽名和某些印刷文字太模糊了，無法精確把所有資訊都辨識出來。</p></li>
@@ -334,27 +334,27 @@
 <li><p>繼續分析 <a target="_blank" rel="noopener" href="https://unsmil.unmissions.org/libyan-dialogue-participants-initial-libyan-political-agreeement-skhirat-morocco-11072015"><em>Libyan dialogue participants initial the Libyan Political Agreeement in Skhirat, Morocco 11/07/2015</em></a> 這篇文章的圖片，我們發現了幾張疑似目標人物的簽名：</p>
 <ul>
 <li><p>此人疑似對應到目標 A ，並且有對應的簽名的照片加上模糊名牌：</p>
-<p><img src="./imgs/oo51.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo51.png" /></p></li>
 <li><p>此人疑似對應到目標 B ，並且有對應的簽名的照片：</p>
-<p><img src="./imgs/oo52.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo52.png" /></p></li>
 <li><p>此人疑似對應到目標 C ，並且有對應的簽名的照片，但較為模糊，難對應：</p>
-<p><img src="./imgs/oo53.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo53.png" /></p></li>
 <li><p>此人疑似對應到目標 D ，沒有看到對應簽名位置的照片：</p>
-<p><img src="./imgs/oo54.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo54.png" /></p></li>
 </ul></li>
 <li><p>現在開始對應簽名訊息，把目標 A 對應到的簽名相關文字拿去給 Google 解析，可以直接查到 Salih Hama bakdah 這個人物，目標 A 的名字到這邊已經找到！</p>
-<p><img src="./imgs/oo55.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo55.png" /></p></li>
 <li><p>繼續對應簽名訊息，把目標 B 對應到的簽名相關文字拿去給 Google 解析，可以直接查到 Fadil Al-Amin 這個人物 ( 當然，我們有把它翻譯成英文🤣 ) ，目標 B 的名字到這邊已經找到！</p>
-<p><img src="./imgs/oo56.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo56.png" /></p></li>
 <li><p>一樣用類似的方式找到 Mustafa Abu Shagour 也就是目標 C ！</p>
-<p><img src="./imgs/oo57.png" /></p></li>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo57.png" /></p></li>
 <li><p>不過我們查完所有可以辨識的簽名相關文字後，沒找到目標 D ，我們後來直接重頭開始整理關於目標 D 的所有訊息，但是 Google 圖片搜尋實在找不太到該人物。由於簽署國際協議這種場合應該會有很多記者去攝影，故我們把我們的搜尋平台轉到 <a target="_blank" rel="noopener" href="https://www.gettyimages.hk/">gettyimages</a> 上，然而直接搜尋 Libyan Political Agreement 會沒有結果，所以我們搜尋 Libya Skhirat Morocco ，就找到了 Mohammed Maazab ，也就是目標 D ！到這邊四位目標人物的名稱都已經找到！</p>
-<p><img src="./imgs/oo58.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo58.png" /></p>
 <ul>
 <li>由於剛好看到該網站出現可能要購買圖片授權才能使用圖片的文字訊息，所以我們就不把那些圖放上來了😅</li>
 </ul></li>
 <li><p>最終目標代號對應到的名稱如下：</p>
-<p><img src="./imgs/oo47.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo47.png" /></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; Salih Hama bakdah</span><br><span class="line">B --&gt; Fadil Al-Amin</span><br><span class="line">C --&gt; Mustafa Abu Shagour</span><br><span class="line">D --&gt; Mohammed Maazab</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
@@ -362,8 +362,8 @@
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="./imgs/oo61.png" /></td>
-<td style="text-align: center;"><img src="./imgs/oo62.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo61.png" /></td>
+<td style="text-align: center;"><img src="https://raw.githubusercontent.com/Sharkkcode/Sharkkcode.github.io/refs/heads/main/img/OSINT_Exercise_imgs/oo62.png" /></td>
 </tr>
 </tbody>
 </table></li>
