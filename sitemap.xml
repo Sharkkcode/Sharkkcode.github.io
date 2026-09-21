@@ -416,13 +416,6 @@
 
   
   <url>
-    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sharkkcode.github.io/tags/ML/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -431,6 +424,13 @@
   
   <url>
     <loc>https://sharkkcode.github.io/tags/homework/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sharkkcode.github.io/tags/CTF/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -500,6 +500,13 @@
   </url>
   
   <url>
+    <loc>https://sharkkcode.github.io/tags/integrate/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sharkkcode.github.io/tags/SHELLCTF/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -522,13 +529,6 @@
   
   <url>
     <loc>https://sharkkcode.github.io/tags/SQL-injection/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sharkkcode.github.io/tags/integrate/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

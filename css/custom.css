@@ -1,0 +1,9 @@
+/* 關掉折行模式帶來的 counter 行號 */
+#article-container .highlight .line::before {
+  content: none !important;
+}
+/* 讓無空格的長 URL 也能斷行 */
+#article-container .highlight pre,
+#article-container .highlight .line {
+  word-break: break-all !important;
+}
