@@ -7,3 +7,13 @@
 #article-container .highlight .line {
   word-break: break-all !important;
 }
+
+/* 基準字級放大到 17px 後，把文章大標題縮回原本的視覺大小 */
+#post-info .post-title {
+  font-size: 2.2em !important;
+}
+@media screen and (max-width: 768px) {
+  #post-info .post-title {
+    font-size: 1.6em !important;
+  }
+}
